@@ -1,6 +1,8 @@
 # wpd_notify
 Async BOF for WPD removal/insertion notifications
 
+Not sure how it works, made it "blindly"
+
 ### References
 
 [userlogon-notify](https://github.com/InfinityCurveLabs/userlogon-notify)

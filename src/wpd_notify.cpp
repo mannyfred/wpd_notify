@@ -74,7 +74,7 @@ HRESULT get_device_stuff(LPCWSTR device_name) {
             ( deviceManager->*fn )( device_name, name, &name_len );
         }
 
-        BeaconPrintf( CALLBACK_OUTPUT, "%ws: %ws ", output, name );
+        BeaconPrintf( CALLBACK_OUTPUT, "%ws: %ws\n", output, name );
 
         if ( name ) {
             MSVCRT$memset( name, 0, name_len );
@@ -193,7 +193,7 @@ void go(char* args, int len) {
 
     window_handle = User32$CreateWindowExW( 0, window_class.lpszClassName, nullptr, 0, 0, 0, 0, 0, HWND_MESSAGE, nullptr, window_class.hInstance, nullptr );
     if ( !window_handle ) {
-        BeaconPrintf( CALLBACK_ERROR, "CreateWindowExW: %lu\n", KERNEL32$GetLastError());
+        BeaconPrintf( CALLBACK_ERROR, "CreateWindowExW: %lu\n", KERNEL32$GetLastError() );
         goto _End;
     }
 
