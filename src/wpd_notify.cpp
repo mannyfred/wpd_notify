@@ -30,6 +30,7 @@ extern "C" {
 
     WINBASEAPI void         __cdecl MSVCRT$memset(void*, int, size_t);
 
+    WINBASEAPI DWORD        WINAPI KERNEL32$WaitForSingleObject(HANDLE, DWORD);
     WINBASEAPI DWORD        WINAPI KERNEL32$GetLastError();
     WINBASEAPI HMODULE      WINAPI KERNEL32$GetModuleHandleW(LPCWSTR);
     WINBASEAPI HANDLE       WINAPI KERNEL32$GetProcessHeap();
@@ -115,7 +116,7 @@ LRESULT CALLBACK wnd_callback(HWND window, UINT message, WPARAM wparam, LPARAM l
         }
         case WM_TIMER: {
             if ( wparam == IDT_PINGTIMER ) {
-                if ( WaitForSingleObject( BeaconGetStopJobEvent(), 0 ) != WAIT_OBJECT_0 ) {
+                if ( KERNEL32$WaitForSingleObject( BeaconGetStopJobEvent(), 0 ) != WAIT_OBJECT_0 ) {
                    break;
                 }
             }
