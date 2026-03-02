@@ -1,7 +1,7 @@
 # wpd_notify
 Async BOF for WPD removal/insertion notifications
 
-Not sure how it works, made it "blindly"
+Not sure if it works, made it "blindly"
 
 ### References
 
